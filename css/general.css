@@ -1,20 +1,28 @@
-#FontSelector{
+#FontSelector {
     font-size: 1.5rem;
     padding: 0.3rem;
     margin-bottom: 0.6rem;
     box-sizing: border-box;
 }
-#Checker{
+
+#Checker {
     width: 100%;
     font-size: 64px;
     padding: 0.6rem;
     box-sizing: border-box;
 }
-#Checker::selection{
+
+#Checker::selection {
     background: transparent;
     text-shadow: 3px 3px 3px #00d0ff;
 }
-button{
+
+#Checker::placeholder {
+    font-style: italic;
+    opacity: 0.6;
+}
+
+button {
     font-size: 1.4rem;
     padding: 0.3rem 0.6rem;
     margin: 0.2rem;

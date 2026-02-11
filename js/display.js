@@ -25,7 +25,7 @@ function updateCheckerFont() {
     var selectedFontKey = E_FontSelector.value;
     E_Checker.style.fontFamily = selectedFontKey;
     var selectedLanguage = FONTS[selectedFontKey].classification.code;
-    E_Checker.textContent = LANGUAGE_CLASSIFICATION[selectedLanguage].placeholder;
+    E_Checker.placeholder = LANGUAGE_CLASSIFICATION[selectedLanguage].placeholder;
 }
 
 E_FontSelector.addEventListener("change", function() {
