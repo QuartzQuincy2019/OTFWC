@@ -21,11 +21,15 @@ function initializeFontSelector() {
 }
 initializeFontSelector();
 
-E_FontSelector.addEventListener("change", function() {
+function updateCheckerFont() {
     var selectedFontKey = E_FontSelector.value;
     E_Checker.style.fontFamily = selectedFontKey;
     var selectedLanguage = FONTS[selectedFontKey].classification.code;
     E_Checker.textContent = LANGUAGE_CLASSIFICATION[selectedLanguage].placeholder;
+}
+
+E_FontSelector.addEventListener("change", function() {
+    updateCheckerFont();
 });
 
 function createSizeButton(size) {
@@ -37,7 +41,7 @@ function createSizeButton(size) {
     return button;
 }
 E_SizeButtons.innerHTML = "";
-const fontSizes = [16, 24, 32, 48, 64, 96, 128];
+const fontSizes = [16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512];
 fontSizes.forEach(size => {
     const button = createSizeButton(size);
     E_SizeButtons.appendChild(button);
