@@ -15,19 +15,20 @@ const LANGUAGE_CLASSIFICATION = {
     zh: new Language("zh", "Chinese", "天地玄黄 宇宙洪荒 日月盈昃 辰宿列张"),
 }
 class Font {
-    constructor(name, classification, fileName) {
+    constructor(name, classification, fileName, sampleText = classification.placeholder) {
         this.name = name;
         this.fileName = fileName;
         this.classification = classification;
         this.path = FONTS_DIRECTORY_PATH + classification.name + "/" + fileName;
+        this.sampleText = sampleText;
     }
 }
 const FONTS = {
     Amiri: new Font("Amiri", LANGUAGE_CLASSIFICATION.ar, "Amiri/Amiri-Regular.ttf"),
     AmiriQuran: new Font("AmiriQuran", LANGUAGE_CLASSIFICATION.ar, "Amiri/AmiriQuran.ttf"),
     AmiriQuranColored: new Font("AmiriQuranColored", LANGUAGE_CLASSIFICATION.ar, "Amiri/AmiriQuranColored.ttf"),
-    ArefRuqaa: new Font("ArefRuqaa", LANGUAGE_CLASSIFICATION.ar, "ArefRuqaa/ArefRuqaa-Regular.ttf"),
-    ArefRuqaaInk: new Font("ArefRuqaaInk", LANGUAGE_CLASSIFICATION.ar, "ArefRuqaa/ArefRuqaaInk-Regular.ttf"),
+    ArefRuqaa: new Font("ArefRuqaa", LANGUAGE_CLASSIFICATION.ar, "ArefRuqaa/ArefRuqaa-Regular.ttf", "اَلْخَطُّ اَلْعَرَبِيُّ فَنٌّ يَجْمَعُ بَيْنَ اَلْأَصَالَةِ وَالْإِبْدَاعِ فِي تَصْمِيمِ اَلْحُرُوفِ"),
+    ArefRuqaaInk: new Font("ArefRuqaaInk", LANGUAGE_CLASSIFICATION.ar, "ArefRuqaa/ArefRuqaaInk-Regular.ttf", "اَلْخَطُّ اَلْعَرَبِيُّ فَنٌّ يَجْمَعُ بَيْنَ اَلْأَصَالَةِ وَالْإِبْدَاعِ فِي تَصْمِيمِ اَلْحُرُوفِ"),
     NotoSansSiddham: new Font("NotoSansSiddham", LANGUAGE_CLASSIFICATION.sid, "NotoSansSiddham/NotoSansSiddham-Regular.ttf"),
     Shobhika: new Font("Shobhika", LANGUAGE_CLASSIFICATION.sa, "Shobhika/Shobhika-Regular.otf"),
     NotoSansDevanagari: new Font("NotoSansDevanagari", LANGUAGE_CLASSIFICATION.sa, "NotoSansDevanagari/NotoSansDevanagari-Regular.ttf"),

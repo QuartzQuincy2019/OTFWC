@@ -8,8 +8,13 @@
 #Checker {
     width: 100%;
     font-size: 64px;
-    padding: 0.6rem;
+    padding: 1rem;
     box-sizing: border-box;
+}
+
+#Checker:focus {
+    outline: none;
+    box-shadow: 0 0 5px inset #00d0ff;
 }
 
 #Checker::selection {
@@ -26,4 +31,9 @@ button {
     font-size: 1.4rem;
     padding: 0.3rem 0.6rem;
     margin: 0.2rem;
+}
+
+.rtl{
+    direction: rtl;
+    text-align: right;
 }

@@ -25,7 +25,12 @@ function updateCheckerFont() {
     var selectedFontKey = E_FontSelector.value;
     E_Checker.style.fontFamily = selectedFontKey;
     var selectedLanguage = FONTS[selectedFontKey].classification.code;
-    E_Checker.placeholder = LANGUAGE_CLASSIFICATION[selectedLanguage].placeholder;
+    E_Checker.placeholder = FONTS[selectedFontKey].sampleText;
+    if (selectedLanguage === "ar") {
+        E_Checker.classList.add("rtl");
+    } else {
+        E_Checker.classList.remove("rtl");
+    }
 }
 
 E_FontSelector.addEventListener("change", function() {
