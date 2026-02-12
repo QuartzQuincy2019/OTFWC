@@ -53,7 +53,7 @@ function createSizeButton(size) {
     return button;
 }
 E_SizeButtons.innerHTML = "";
-const fontSizes = [16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512];
+const fontSizes = [16, 24, 32, 48, 64, 80, 96, 128, 192, 256, 384, 512];
 var currentFontSize = null;
 fontSizes.forEach(size => {
     const button = createSizeButton(size);
@@ -79,8 +79,14 @@ function toggleLetterButtons() {
             break;
     }
     E_LetterButtons.innerHTML = "";
+    if (FONTS[currentFontName].isColored) {
+        E_Checker.classList.add("colored");
+    }
     targetSet.forEach(letter => {
         const button = createLetterButton(letter);
+        if (FONTS[currentFontName].isColored) {
+            button.classList.add("colored");
+        }
         button.style.fontFamily = currentFontName;
         E_LetterButtons.appendChild(button);
     });
