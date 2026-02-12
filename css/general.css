@@ -28,12 +28,42 @@
 }
 
 button {
-    font-size: 1.4rem;
-    padding: 0.3rem 0.6rem;
+    font-size: 2rem;
+    padding: auto;
     margin: 0.2rem;
+    border-radius: 5px;
+    transition-property: all;
+    transition-duration: 300ms;
 }
 
-.rtl{
+button:hover {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #00449d;
+    color: white;
+    cursor: pointer;
+}
+
+#LetterButtons {
+    gap: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1.6em, 1fr));
+    font-size: var(--target-button--font-size);
+    padding: 4px;
+}
+
+#LetterButtons button {
+    margin: 1px;
+    padding: 0;
+    text-align: center;
+    font-size: var(--target-button--font-size);
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.rtl {
     direction: rtl;
     text-align: right;
 }
