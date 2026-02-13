@@ -75,6 +75,7 @@ function toggleLetterButtons() {
         case "ar": targetSet = ArabicLetters; break;
         case "sa": targetSet = DevanagariLetters; break;
         case "km": targetSet = KhmerLetters; break;
+        case "sid": targetSet = SiddhamLetters; break;
         default: E_LetterButtons.innerHTML = "";
             break;
     }
